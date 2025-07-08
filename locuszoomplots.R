@@ -20,3 +20,10 @@ names(UKB_HbA1c_GWAS)[names(UKB_HbA1c_GWAS) == "SE"] <- "se"
 #Load hg19 recombination data locally
 
 recomb.hg19 <- import.bw("/Users/vc23656/Downloads/hapMapRelease24CombinedRecombMaphg19.bw")
+
+#Annotate data and add recombination rate
+
+UKB_HbA1c_GWAS_plot <- locus(data = UKB_HbA1c_GWAS_full, gene = 'GLP1R', flank = 5e5,
+             ens_db = "EnsDb.Hsapiens.v75")
+
+UKB_HbA1c_GWAS_plot <- link_recomb(UKB_HbA1c_GWAS_plot, recomb = recomb.hg19)
