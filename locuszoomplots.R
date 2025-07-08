@@ -27,3 +27,5 @@ UKB_HbA1c_GWAS_plot <- locus(data = UKB_HbA1c_GWAS_full, gene = 'GLP1R', flank =
              ens_db = "EnsDb.Hsapiens.v75")
 
 UKB_HbA1c_GWAS_plot <- link_recomb(UKB_HbA1c_GWAS_plot, recomb = recomb.hg19)
+
+locus_plot(UKB_HbA1c_GWAS_plot)
